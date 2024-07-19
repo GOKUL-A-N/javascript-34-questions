@@ -75,19 +75,86 @@ console.log(res)
 
 // Problem 10 -> Implementing stack with array
 let stack = []
-function isEmpty(){
+function isEmptyStack(){
     return stack.length === 0;
 }
-function push(element){
+function pushStack(element){
     stack.push(element);
     return val;
 }
-function pop(){
+function popStack(){
     let val = stack[stack.length - 1];
     stack.pop();
     return val;
 }
-function peek(){
+function peekStack(){
     return stack[stack.length - 1];
 }
 
+// Problem 11 -> creating array of array
+let nums = []
+nums.push([1,2,3,4])
+nums.push([5,6,7,8])
+nums.push([9,10,11,12])
+
+console.log(nums)
+
+// Problem 12 -> implementing queue with array
+let queue = []
+function isEmptyQueue(){
+    return queue.length === 0;
+}
+function pushQueue(element){
+    queue.unshift(element);
+    return element;
+}
+function popQueue(){
+    let val = queue[0];
+    queue.pop();
+    return val;
+}
+function peekQueue(){
+    return queue[queue.length - 1];
+}
+
+// problem 13 -> merging two arrays
+function mergeArrays(arr1, arr2){
+    const newMergeArrays = arr1.concat(arr2);
+    return newMergeArrays;
+}
+let mergeArr1 = [1,2,3]
+let mergeArr2 = [4,5,6]
+
+console.log(mergeArrays(mergeArr1,mergeArr2))
+
+
+// problem 14 -> flattenning an array
+function flettenArray(arrToFlat){
+    const newFlatArray = arrToFlat.flat()
+    return newFlatArray;
+} 
+
+arrToFlat = [[1,2,3],[4,5,6],[7,8,9]]
+
+console.log(flettenArray(arrToFlat))
+
+// problem 15 -> array spreading
+function arraySpreading(spreadArray , resultArray){
+    resultArray = [...spreadArray , ...resultArray]
+    return resultArray;
+}
+
+console.log(arraySpreading([1,2,3],[4,5,6]));
+
+// problem 16 -> check to arrays are equal
+function arrayEquality(array1, array2){
+    if(array1.length !== array2.length) return false;
+    array1.sort();
+    array2.sort();
+    for(let i=0; i<array1.length; i++){
+        if(array1[i] !== array2[i]) return false;
+    }
+    return true;
+}
+
+console.log(arrayEquality([1,2,3],[3,2,1]));
